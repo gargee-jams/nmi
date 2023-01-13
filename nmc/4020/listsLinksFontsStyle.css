@@ -1,4 +1,4 @@
-ul {
+ul li {
    list-style-type: square;
    list-style-image: url(cloud.jpg);
    list-style-position: inside;
