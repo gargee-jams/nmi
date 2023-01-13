@@ -1,0 +1,7 @@
+ul li {
+    padding-left: 2 rem;
+    background-image: url(cloud.jpg);
+    background-position: 0 0;
+    background-size: 1.6rem 1.6rem;
+    background-repeat: no-repeat;
+}
