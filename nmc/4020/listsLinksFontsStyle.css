@@ -7,14 +7,14 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: #FFF6E6;
 }
-a.one:link {color:#6C584C;}
-a.one:visited {color:#A98467;}
+a.one:link {color:#A98467;}
+a.one:visited {color:#6C584C;}
 a.one:hover {color:#e00794;
 font-family: fantasy;}
 a.one:active {font-style:italic;}
 
-a.two:link{color:#ADC178;}
-a.two:visited{color:#DDE5B6;}
+a.two:link{color:#DDE5B6;}
+a.two:visited{color:#ADC178;}
 a.two:hover{color:#1E079F;
 font-family: fantasy;}
 a.two:active {font-style: italic;}
