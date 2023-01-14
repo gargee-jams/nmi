@@ -12,9 +12,11 @@ a.one:visited {color:#6C584C;}
 a.one:hover {color:#e00794;
 font-family: fantasy;}
 a.one:active {font-style:italic;}
+a.one:focus {text-decoration: line-through;}
 
 a.two:link{color:#DDE5B6;}
 a.two:visited{color:#ADC178;}
 a.two:hover{color:#1E079F;
 font-family: fantasy;}
 a.two:active {font-style: italic;}
+a.two:focus {text-decoration: wavy;}
