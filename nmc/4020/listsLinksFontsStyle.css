@@ -11,7 +11,8 @@ a.one{
     border: dashed #ADC178;
     border-radius: 15px;
 }
-a.one:link {color:#A98467;}
+a.one:link {color:#A98467;
+border: dashed red}
 a.one:visited {color:#6C584C;}
 a.one:hover {color:#e00794;
 font-family: fantasy;}
