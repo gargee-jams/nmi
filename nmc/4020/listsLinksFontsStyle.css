@@ -12,7 +12,7 @@ a.one{
     border-radius: 30px;
 }
 a.one:link {color:#6C584C;
-border: dashed red}
+}
 a.one:visited {color:magenta;}
 a.one:hover {color:#e00794;
 font-family: fantasy;}
@@ -20,7 +20,7 @@ a.one:active {font-style:italic;}
 a.one:focus {text-decoration: line-through;}
 
 
-a.one{
+a.two{
     border: dashed #6C584C;
     border: 70px;
 }
