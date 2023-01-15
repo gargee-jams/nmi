@@ -22,7 +22,7 @@ a.one:focus {text-decoration: line-through;}
 
 a.two{
     border: dashed #6C584C;
-    border: 70px;
+    border: 10px;
 }
 a.two:link{color:#ADC178;}
 a.two:visited{color:purple;}
