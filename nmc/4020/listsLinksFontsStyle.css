@@ -9,7 +9,7 @@ body {
 }
 a.one{
     border: dashed #ADC178;
-    border-radius: 15px;
+    border-radius: 30px;
 }
 a.one:link {color:#6C584C;
 border: dashed red}
