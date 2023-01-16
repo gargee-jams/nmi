@@ -41,5 +41,5 @@ a.two:active {font-style: italic;}
 a.two:focus {text-decoration: wavy;}
 
 div.changeFont {
-    font-family: "snekregular";
+    font-family: 'snekregular';
 }
