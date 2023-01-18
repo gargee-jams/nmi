@@ -9,12 +9,20 @@
 </head>
 <body>
     <ol>
-        <h3>Getting Started</h3>
+        <h2>Getting Started</h2>
         <li>Make sure you have a GitHub account.</li>
         <li>Go to <a href="https://domains.google.com/">Google Domains</a>, and buy a domain. Basic domains are 12/yr.</li>
         <ol>
-            <h4>Setting up Your Domain</h4>
+            <h3>Setting up Your Domain</h3>
             <li>On Google Domains, go to the side menu and click <strong>My Domains</strong>.</li>
+            <li>Select the domain you are using for this course.</li>
+            <li>Navigate to the side menu and select <strong>DNS</strong>.</li>
+            <li>Change the following:</li>
+                <ol><li>Host Name: <em>nmi</em></li>
+                <li>Type: <em>CNAME</em></li>
+                <li>TTL: 60</li>
+                <li>Data: <em>githubUsername.github.io.</em></li></ol>
+            
         </ol>
     </ol>
 </body>
