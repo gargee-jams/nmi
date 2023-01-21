@@ -11,10 +11,21 @@
     <header style="font-size: 24px">Form Practice</header>
     <main>
          <form action="https://apweb.quest/demos/receiver.html" method="get"> 
-          name <input type="text" name="myname"required/><br/>
-          age <input type="text" name="age" required><br/>
-          profession <input type="text" name="profession" required><br/> 
-          home town <input type="text" name="hometown" required><br/>  
+          <label for="dropdown">Choose a day of the weekend:</label>
+          <select name="dropdown" id="dropdown">
+            <option value="friday">Friday</option>
+            <option value="saturday">Saturday</option>
+            <option value="sunday">Sunday</option>
+          </select>
+          <!--add autocomplete box here-->
+          <fieldset>
+            <input type="radio" id="netflix" name="streaming" value="netflix">
+            <label for="netflix">Netflix</label>
+            <input type="radio" id="spotify" name="music" value="spotify">
+            <label for="spotify">Spotify</label>
+            <input type="radio" id="pinterest" name="pins" value="pinterest">
+            <label for="pinterest">Pinterest</label> 
+          </fieldset>
           <input type="submit">  
           </form> 
     </main>
