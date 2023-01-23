@@ -20,9 +20,10 @@
                 max="500000"
                 step="100"
                 value="250000" />
-            <output class="price-output" for="price"></output>
-                
+            <output class="price-output" for="price"></output> 
+            <label for="color">Choose a color:</label> 
             <input type="color" name="color" id="color"/>
+            <output class ="color-output" for="color"></output>
           <input type="submit">  
           </form> 
     </main>
@@ -32,8 +33,14 @@
     const price = document.querySelector("#price");
     const output = document.querySelector(".price-output");
     output.textContent = price.value;
-
     price.addEventListener("input", () => {
-    output.textContent = price.value;
+        output.textContent = price.value;
     });
+
+    const color = document.querySelector("#color");
+    const output2 = document.querySelector(".color-output");
+    output2.textContent = color.value;
+    color.addEventListener("input", () => {
+        output.textContent = color.value});
+
 </script>
