@@ -22,10 +22,9 @@
                 value="250000" />
             <output class="price-output" for="price"></output> 
 
-            <input type="color" name="color" id="color"/>
-            
             <label for="color">Choose a color:</label> 
-            <output class ="color-output" for="color"></output>
+            <input type="color" name="color" id="color"/>
+            <output class= "color-output" for="color"></output>
           <input type="submit">  
           </form> 
     </main>
@@ -43,6 +42,7 @@
     const output2 = document.querySelector(".color-output");
     output2.textContent = color.value;
     color.addEventListener("input", () => {
-        output.textContent = color.value});
+        output.textContent = color.value;
+    });
 
 </script>
