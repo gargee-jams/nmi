@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 3</title>
+    <style>body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}</style>
+</head>
+<body>
+    <header style="font-size: 24px">Form Practice</header>
+    <main>
+         <form action="showme.html" method="get" autocomplete="off"> 
+            <label for="price">Choose a maximum house price: </label>
+            <input
+                type="range"
+                name="price"
+                id="price"
+                min="50000"
+                max="500000"
+                step="100"
+                value="250000" />
+            <output class="price-output" for="price"></output>
+                
+          <input type="submit">  
+          </form> 
+    </main>
+</body>
+</html>
+<script>
+const price = document.querySelector("#price");
+const output = document.querySelector(".price-output");
+
+output.textContent = price.value;
+
+price.addEventListener("input", () => {
+  output.textContent = price.value;
+});
+
+</script>
