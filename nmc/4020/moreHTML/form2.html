@@ -11,13 +11,24 @@
     <header style="font-size: 24px">Form Practice</header>
     <main>
          <form action="showme.html" method="get" autocomplete="off"> 
+          <!--dropdown box-->
           <label for="dropdown">Choose a day of the weekend:</label>
           <select name="dropdown" id="dropdown">
             <option value="friday">Friday</option>
             <option value="saturday">Saturday</option>
             <option value="sunday">Sunday</option>
           </select>
-          <!--add autocomplete box here-->
+          <!--autocomplete box-->
+          <label for="auto">Choose an animal:</label>
+          <input list="animals">
+          <datalist id="animals">
+            <option>Cat</option>
+            <option>Dog</option>
+            <option>Turtle</option>
+            <option>Snake</option>
+            <option>Possum</option>
+          </datalist>
+          <!--fieldset w radio buttons-->
           <fieldset>
             <input type="radio" id="netflix" name="streaming" value="netflix">
             <label for="netflix">Netflix</label>
@@ -26,6 +37,7 @@
             <input type="radio" id="pinterest" name="pins" value="pinterest">
             <label for="pinterest">Pinterest</label> 
           </fieldset>
+          <!--number input-->
           <input type="number" name="date" id="date" min="1" max="31" step="1" />
           <input type="submit">  
           </form> 
