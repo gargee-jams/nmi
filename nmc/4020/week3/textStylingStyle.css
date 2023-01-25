@@ -9,8 +9,9 @@ p{
 }
 h1{
     font-size:3.0rem;
-    text-transform: capitalize;
+    text-transform: uppercase;
     text-shadow: 2px 2px plum;
 }
 h2{font-size:2.1rem;}
 h3{font-size:1.3rem;}
+h1, h2, h3 {text-align: center;}
