@@ -2,8 +2,8 @@
 
 @font-face {
     font-family: 'myFont';
-    src: url('font/snek-regular_2-webfont.woff2') format('woff2'),
-         url('font/snek-regular_2-webfont.woff') format('woff');
+    src: url('../font/snek-regular_2-webfont.woff2') format('woff2'),
+         url('../font/snek-regular_2-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
