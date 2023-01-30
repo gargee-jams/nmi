@@ -1,6 +1,9 @@
 let input1 = document. querySelector('#input1');
 let input2 = document.querySelector('#input2');
 let addButton = document.querySelector('#addButton');
+let subButton = document.querySelector('#subButton');
+let multButton = document.querySelector('#multButton');
+let divButton = document.querySelector('#divButton');
 let output = document.querySelector('#output');
 
 function add() {
