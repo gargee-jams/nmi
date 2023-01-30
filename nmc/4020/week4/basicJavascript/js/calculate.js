@@ -6,4 +6,16 @@ let output = document.querySelector('#output');
 function add() {
     output.value = Number(input1.value) + Number(input2.value);
 }
+function sub() {
+    output.value = Number(input1.value) + Number(input2.value);
+}
+function mult() {
+    output.value = Number(input1.value) * Number(input2.value);
+}
+function div() {
+    output.value = Number(input1.value) / Number(input2.value);
+}
 addButton.onclick = () => add();
+subButton.onclick = () => sub();
+multButton.onclick = () => mult();
+divButton.onclick = () => div();
