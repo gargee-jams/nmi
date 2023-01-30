@@ -12,7 +12,8 @@ function add() {
     output.value = "$" + (Number(input1.value) + Number(input2.value));
 }
 function sub() {
-    output.value = "$" + (Number(input1.value) - Number(input2.value));
+    let sub = (Number(input1.value) - Number(input2.value));
+    output.value = "$" + sub;
 }
 function mult() {
     output.value = "$" + (Number(input1.value) * Number(input2.value));
