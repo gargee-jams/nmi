@@ -13,15 +13,12 @@ function add() {
     op.innerText = '+';
 }
 function sub() {
-    op.innerHTML = '-';
     output.value = "$" + Number(input1.value) - Number(input2.value);
 }
 function mult() {
-    op.innerHTML = '*';
     output.value = "$" + Number(input1.value) * Number(input2.value);
 }
 function div() {
-    op.innerHTML = '/';
     output.value = "$" + Number(input1.value) / Number(input2.value);
 }
 addButton.onclick = () => add();
