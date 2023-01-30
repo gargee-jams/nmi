@@ -10,7 +10,7 @@ function add() {
     output.value = Number(input1.value) + Number(input2.value);
 }
 function sub() {
-    output.value = Number(input1.value) + Number(input2.value);
+    output.value = Number(input1.value) - Number(input2.value);
 }
 function mult() {
     output.value = Number(input1.value) * Number(input2.value);
