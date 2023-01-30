@@ -1,6 +1,5 @@
 let input1 = document. querySelector('#input1');
 let input2 = document.querySelector('#input2');
-let op = document.getElementById('#operator');
 let addButton = document.querySelector('#addButton');
 let subButton = document.querySelector('#subButton');
 let multButton = document.querySelector('#multButton');
