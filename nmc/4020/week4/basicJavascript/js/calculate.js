@@ -8,7 +8,7 @@ let divButton = document.querySelector('#divButton');
 let output = document.querySelector('#output');
 
 function add() {
-    op.innerHTML = '+';
+    op.innerText = '+';
     output.value = "$" + Number(input1.value) + Number(input2.value);
 }
 function sub() {
