@@ -9,7 +9,8 @@ let divButton = document.querySelector('#divButton');
 let output = document.querySelector('#output');
 
 function add() {
-    output.value = "$" + (Number(input1.value) + Number(input2.value));
+    let sum = (Number(input1.value) + Number(input2.value));
+    output.value = "$" + sum;
 }
 function sub() {
     let sub = (Number(input1.value) - Number(input2.value));
