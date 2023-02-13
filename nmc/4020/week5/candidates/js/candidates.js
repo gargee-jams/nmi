@@ -3,5 +3,5 @@ let candidatePix = ["bush.jpg","carson.jpg","chafee.jpg","christie.jpg","cruz.jp
 let output = document.querySelector('#alsoRan');
 //output.innerHTML = candidateNames[18];
 for (var i = 0; i < candidateNames.length - 1; i++) {
-    output.innerHTML += "<li>" + candidateNames[i] + "<img src=pix/" + candidatePix[i] + "> </li>";
+    output.innerHTML += "<li>" + candidateNames[i] + "<br><img src=pix/" + candidatePix[i] + "> <br></li>";
 } //for
