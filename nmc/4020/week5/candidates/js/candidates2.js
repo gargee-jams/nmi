@@ -8,6 +8,11 @@ let i = 0;
 function canShow(plusMinus) {
     output.innerHTML = "<li>" + candidateNames[i] + "<br><img src=pix/" + candidatePix[i] + "> </li>";
     i += plusMinus;
+    if (i == candidateNames.length) {
+        i = 0;
+    } else if (i < 0) {
+        i = candidateNames.length - 1;
+    } //if
 } //canShow
 next.onclick = function() {
     canShow(1);
