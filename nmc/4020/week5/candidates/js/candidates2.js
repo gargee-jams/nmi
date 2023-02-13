@@ -3,9 +3,7 @@ let candidatePix = ["bush.jpg","carson.jpg","chafee.jpg","christie.jpg","cruz.jp
 let output = document.querySelector('#alsoRan');
 let next = document.querySelector('#next');
 let previous = document.querySelector('#previous');
-for (var i = 0; i < candidateNames.length - 1; i++) {
-    output.innerHTML += "<li>" + candidateNames[i] + "<br><img src=pix/" + candidatePix[i] + "> </li>";
-} //for
+
 let i = 0;
 function canShow(plusMinus) {
     output.innerHTML = "<li>" + candidateNames[i] + "<br><img src=pix/" + candidatePix[i] + "> </li>";
