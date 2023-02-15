@@ -1,3 +1,8 @@
+let buildList = document.querySelector('#userInput');
+for (var i=0; i < 100; i++) {
+    buildList.innerHTML += "<option value=" +i+ ">" +i+ "</option";
+} //for
+
 function compare () {
     let answer = document.querySelector('#userInput');
     let reaction = document.querySelector('#response');
@@ -21,7 +26,7 @@ function compare () {
                 reaction.innerHTML = answer + " is too low but pretty close";
                 break;
     } //switch
-    
+
     /*if (answer == 24) {
         reaction.innerHTML = "correct";
     } else if (answer > 24) {
