@@ -15,7 +15,7 @@ let s3Sub = document.querySelector('#ss3Sub');
 
 let i = 0;
 function canShow(plusMinus, arr1, arr2) {
-    output.innerHTML = "<li>" + arr1[i] + "<br><img src=pix/" + ar22[i] + "> </li>";
+    output.innerHTML = "<li>" + arr1[i] + "<br><img src=pix/" + arr2[i] + "> </li>";
     i += plusMinus;
     if (i == arr1.length) {
         i = 0;
