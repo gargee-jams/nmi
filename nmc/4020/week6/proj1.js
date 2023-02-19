@@ -5,7 +5,9 @@ let candidatePix1 = ["bush.jpg","carson.jpg","chafee.jpg","christie.jpg","cruz.j
 let candidatePix2 = ["graham.jpg","jindal.jpg","kasich.jpg","lessig.jpg","omalley.jpg","pataki.jpg","paul.jpg"];
 let candidatePix3 = ["perry.jpg","rubio.jpg","sanders.jpg","santorum.jpg","trump.jpg","walker.jpg","webb.jpg"];
 
-let output = document.querySelector('#alsoRan');
+let output1 = document.querySelector('#out1');
+let output2 = document.querySelector('#out2');
+let output3 = document.querySelector('#out3');
 let s1Add = document.querySelector('#ss1Add');
 let s1Sub = document.querySelector('#ss1Sub');
 let s2Add = document.querySelector('#ss2Add');
@@ -14,7 +16,7 @@ let s3Add = document.querySelector('#ss3Add');
 let s3Sub = document.querySelector('#ss3Sub');
 
 let i = 0;
-function canShow(plusMinus, arr1, arr2) {
+function canShow(plusMinus, arr1, arr2, output) {
     output.innerHTML = "<li>" + arr1[i] + "<br><img src=pix/" + arr2[i] + "> </li>";
     i += plusMinus;
     if (i == arr1.length) {
@@ -24,20 +26,20 @@ function canShow(plusMinus, arr1, arr2) {
     } //if
 } //canShow
 s1Add.onclick = function() {
-    canShow(1, candidateNames1, candidatePix1);
+    canShow(1, candidateNames1, candidatePix1, output1);
 } //onClick
 s1Sub.onclick = function() {
-    canShow(-1, candidateNames1, candidatePix1);
+    canShow(-1, candidateNames1, candidatePix1, output1);
 } //onClick
 s2Add.onclick = function() {
-    canShow(1, candidateNames2, candidatePix2);
-} //onClick
+    canShow(1, candidateNames2, candidatePix2, output2);
+    } //onClick
 s2Sub.onclick = function() {
-    canShow(-1, candidateNames2, candidatePix2);
+    canShow(-1, candidateNames2, candidatePix2, output2);
 } //onClick
 s3Add.onclick = function() {
-    canShow(1, candidateNames3, candidatePix3);
+    canShow(1, candidateNames3, candidatePix3, output3);
 } //onClick
 s3Sub.onclick = function() {
-    canShow(-1, candidateNames3, candidatePix3);
+    canShow(-1, candidateNames3, candidatePix3, output3);
 } //onClick
