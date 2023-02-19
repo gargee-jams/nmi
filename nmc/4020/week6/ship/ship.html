@@ -21,7 +21,8 @@
     setInterval(function() {
         howfar += 5;
         ship.style.left = howfar + "px";
-}, 10);
+        if (howfar>1000) {howfar=-300;}
+}, 1);
    
    
 </script>
