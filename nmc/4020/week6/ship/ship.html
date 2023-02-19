@@ -12,7 +12,8 @@
     <div id="ship">
         <div id="shipLight"></div>
     </div>
-    <button id="change" onclick="direction(-2)">Reverse</button><br>
+    <button id="change" onclick="direction(-2)">Reverse</button>
+    <button id = reverse onlick="spin(5)")>Spin</button><br>
     <a href = "../../index.html">Index</a>
 </body>
 </html>
@@ -40,4 +41,8 @@ function direction(num) {
     dir += num;
 } //direction
    
+function spin(num) {
+    rotate +=num;
+    ship.style.transform = "rotate(" + rotate+")deg";
+} //spin
 </script>
