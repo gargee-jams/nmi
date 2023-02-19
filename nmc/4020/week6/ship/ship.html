@@ -12,6 +12,8 @@
     <div id="ship">
         <div id="shipLight"></div>
     </div>
+    <button id="change" onclick="direction(-2)">Reverse</button><br>
+    <a href = "../../index.html">Index</a>
 </body>
 </html>
 <script>
@@ -19,8 +21,9 @@
     let shipLight = document.querySelector('#shipLight')
     let howfar = 0;
     let light = 0;
+    let dir = 1;
     setInterval(function() {
-        howfar += 1;
+        howfar += dir;
         light++;
         if (howfar>1500) {howfar=-300;}
         if (light == 25) {
@@ -31,6 +34,9 @@
         } //if
         ship.style.left = howfar + "px";
 }, 10);
-   
+
+function direction(num) {
+    dir += num;
+} //direction
    
 </script>
