@@ -1,4 +1,4 @@
-let sq = document.querySelector("#square");
+let sq = document.querySelector('#square');
 
 function changeCSS() {
     sq.style.backgroundColor = "red";
