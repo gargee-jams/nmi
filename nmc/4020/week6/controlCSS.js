@@ -7,6 +7,6 @@ function changeCSS(color) {
     sq.style.backgroundImage = "url('https://media.tenor.com/zrpyKEyxZGwAAAAM/fat-cat-laser-eyes.gif')";
     sq.style.backgroundPosition = "center";
     sq.style.backgroundRepeat = "no-repeat";
-    sq.style.borderWeight = "5px";
+    sq.style.borderWeight = "15px";
     sq.style.borderStyle = "solid";
 } //changeCSS
