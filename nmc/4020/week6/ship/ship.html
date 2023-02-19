@@ -18,10 +18,18 @@
     let ship = document.querySelector('#ship');
     let shipLight = document.querySelector('#shipLight')
     let howfar = 0;
+    let light = 0;
     setInterval(function() {
         howfar += 5;
         ship.style.left = howfar + "px";
         if (howfar>1500) {howfar=-300;}
+        light ++;
+        if (light > 25) {
+            shipLight.style.backgroundColor = 'black';
+        } else if (light > 50) {
+            shipLight.style.backgroundColor = 'red';
+            light = 0;
+        } //if
 }, 1);
    
    
