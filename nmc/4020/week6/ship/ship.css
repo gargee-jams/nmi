@@ -1,0 +1,18 @@
+    #ship {
+            width: 300px;
+            height: 118px;
+            background-image: url('spaceship.png');
+            position: absolute;
+            left: 1px;
+            top: 40px;
+        }
+
+        #shipLight {
+            height: 20px;
+            width: 20px;
+            border-radius: 90%;
+            background-color: red;
+            position: absolute;
+            left: 211px;
+            top: 52px;
+        }

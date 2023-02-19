@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+ <link rel="stylesheet" href="ship.css">
+</head>
+
+<body>
+   
+    <div id="ship">
+        <div id="shipLight"></div>
+    </div>
+</body>
+</html>
+<script>
+    let ship = document.querySelector('#ship');
+    let shipLight = document.querySelector('#shipLight')
+    let howfar = 0;
+    setInterval(function() {
+        howfar += 5;
+        ship.style.left = howfar + "px";
+}, 10);
+   
+   
+</script>
