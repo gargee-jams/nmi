@@ -25,7 +25,8 @@
     setInterval(function() {
         howfar += dir;
         light++;
-        if (howfar>1500) {howfar=-300;}
+        if ((howfar>1500) && (dir == 1)) {howfar=-300;}
+        if ((howfar<-300) && (dir == -1)) {howfar = 1500;}
         if (light == 25) {
             shipLight.style.backgroundColor = 'black';
         } else if (light == 50) {
