@@ -31,6 +31,7 @@ function quote(){
   
   if (classObject.hasOwnProperty(sName)) {
     document.querySelector("#aboutme").innerHTML = classObject[sName];
+    document.querySelector("#image").src = "pix/" + sName + ".jpg";
   } else if (sName == "") {
     document.querySelector("#aboutme").innerHTML = "No information available.";
   } else {
