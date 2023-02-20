@@ -24,7 +24,7 @@ let nameArray =["AlexW","AlexC","Allison","Amy","Andrea","AnnaGrace","Brandon","
 
 
 function quote(){
-  let sName = document.querySelector("#aname");
+  let sName = document.querySelector("#aname").value;
   
   if (classObject.hasOwnProperty(sName)) {
     document.querySelector("#aboutme").innerHTML = classObject[sName];
