@@ -28,6 +28,8 @@ function quote(){
   
   if (classObject.hasOwnProperty(sName)) {
     document.querySelector("#aboutme").innerHTML = classObject[sName];
+  } else if (sName == null) {
+    document.querySelector("#aboutme").innerHTML = "No information available.";
   } else {
     document.querySelector("#aboutme").innerHTML = "No information available about " + sName;
   } //if
