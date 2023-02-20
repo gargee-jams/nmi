@@ -21,7 +21,10 @@ let classObject = {"AlexW": "I am the oldest of two boys, two girls; two redhead
 let nameArray =["AlexW","AlexC","Allison","Amy","Andrea","AnnaGrace","Brandon","Cydney","Elizabeth","Grant","Haleigh","Hua","Jenny","Kaitlyn","McKenzie ","Melissa","Morgan","Niambi","Tyler"];
 
  
-
+let nameList = document.querySelector("#aname");
+for (let i = 0; i < nameArray.length; i++) {
+    nameList.innerHTML += "<option value=" + nameArray[i] + ">" + nameArray[i] + "</option>";
+}
 
 function quote(){
   let sName = document.querySelector("#aname").value;
