@@ -25,13 +25,12 @@ let nameArray =["AlexW","AlexC","Allison","Amy","Andrea","AnnaGrace","Brandon","
 
 function quote(){
   let sName = document.querySelector("#aname");
-  document.querySelector("#aboutme").innerHTML = classObject[sName];
-
+  
   if (classObject.hasOwnProperty(sName)) {
-
+    document.querySelector("#aboutme").innerHTML = classObject[sName];
   } else {
     document.querySelector("#aboutme").innerHTML = "No information available about " + sName;
-  }
-}
+  } //if
+} //quote
 
 
