@@ -8,7 +8,7 @@ fetch(apiUrl)
    // const activitiesList = document.getElementById('activities-list');
     parks.forEach(park => {
       const parkItem = document.createElement('li');
-      parkItem.innerHTML = `<h2>${park.fullName}</h2><p>${park.description}${park.activities}</p><p><a href=${park.images[0].url}><img src=${park.images[0].url}></a>`;
+      parkItem.innerHTML = `<h2>${park.fullName}</h2><p>${park.description}${park.activities.value}</p><p><a href=${park.images[0].url}><img src=${park.images[0].url}></a>`;
       parksList.appendChild(parkItem);
     });
   })
