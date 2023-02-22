@@ -1,0 +1,6 @@
+Query to chatgpt
+
+retrieve data from this api https://developer.nps.gov/api/v1/parks?stateCode=co&api_key=jHiO1R5Cxohjya05TtDkkoNDf40W3c5NmHuFlDpd and display on html page
+
+URL for a specific park
+https://developer.nps.gov/api/v1/parks?id=67A56B17-F533-4A56-B2DA-26091C6AD295&api_key=jHiO1R5Cxohjya05TtDkkoNDf40W3c5NmHuFlDpd
