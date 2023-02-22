@@ -13,12 +13,10 @@ for (let i = 0; i < nameArray.length; i++) {
 } //for
 
 
-function quote(name){
-    let sName = document.querySelector("#aname").value;
-    
-    if (classObject.hasOwnProperty(sName)) {
-      document.querySelector("#about").innerHTML = classObject[sName];
+function quote(name){    
+    if (classObject.hasOwnProperty(name)) {
+      document.querySelector("#about").innerHTML = classObject[name];
     } else {
-      document.querySelector("#about").innerHTML = "No information available about " + sName;
+      document.querySelector("#about").innerHTML = "No information available about " + name;
     } //if
   } //quote
