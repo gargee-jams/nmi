@@ -4,8 +4,6 @@ let classObject = {"Ocean Fantasy": "ocean",
 "Cloud Fantasy": "cloud",
 "Mountain Fantasy": "mountain",
 }
-let value = classObject[""];
-
 
 let keywordArray =["Ocean Fantasy","Space Fantasy","Forest Fantasy","Cloud Fantasy","Mountain Fantasy"];
  
