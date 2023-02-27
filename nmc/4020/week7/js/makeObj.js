@@ -9,13 +9,13 @@ let keywordArray =["Ocean Fantasy","Space Fantasy","Forest Fantasy","Cloud Fanta
  
 let keywordButtons = document.querySelector("#artKeywords");
 for (let i = 0; i < keywordArray.length; i++) {
-  keywordButtons.innerHTML += "<li><button onclick = quote('" + keywordArray[i] + "')>" + keywordArray[i]+"</button></li>";
+  keywordButtons.innerHTML += "<li><button onclick = quote('" + classObject[i] + "')>" + keywordArray[i]+"</button></li>";
 } //for
 
 
 function quote(keyword){   
-    let source = classObject[document.querySelector("#artName").value];
-   
+    //let source = classObject[document.querySelector("#artName").value];
+   let source = classObject[keyword];
     //let source = document.querySelector("#artKeywords").value;
 
     if (classObject.hasOwnProperty(keyword)) {
