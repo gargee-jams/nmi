@@ -13,8 +13,10 @@ for (let i = 0; i < keywordArray.length; i++) {
 } //for
 
 
-function quote(keyword){    
-    let source = document.querySelector("#artKeywords").value;
+function quote(keyword){   
+    let source = classObject[document.querySelector("#artName").value];
+   
+    //let source = document.querySelector("#artKeywords").value;
 
     if (classObject.hasOwnProperty(keyword)) {
       document.querySelector("#image").innerHTML = "<img src= pix/" + source + ".jpg>";
