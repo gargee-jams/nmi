@@ -9,7 +9,7 @@ let keywordArray =["Ocean Fantasy","Space Fantasy","Forest Fantasy","Cloud Fanta
  
 let keywordButtons = document.querySelector("#artKeywords");
 for (let i = 0; i < keywordArray.length; i++) {
-  keywordButtons.innerHTML += "<li><button onclick = quote('" + classObject[keywordArray[i]] +"','" + keywordArray[i] + "') >" + keywordArray[i]+"</button></li>";
+  keywordButtons.innerHTML += "<li><button onclick = quote('" + classObject[keywordArray[i]] +"','Ocean Fantasy') >" + keywordArray[i]+"</button></li>";
 } //for
 
 function quote(jpgName, keyword){   
