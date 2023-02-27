@@ -8,11 +8,12 @@ let nameArray =["AlexW","AlexC","Allison","Amy","aardvark"];
  
 let nameButtons = document.querySelector("#names");
 for (let i = 0; i < nameArray.length; i++) {
-    //.innerHTML += "<li><button onclick =quote('" + nameArray[i] + "')>" +nameArray[i]+"</button></li>";
-  let button = document.createElement("button");
+  nameButtons.innerHTML += "<li><button onclick =quote('" + nameArray[i] + "')>" +nameArray[i]+"</button></li>";
+  
+  /*  let button = document.createElement("button");
   button.innerHTML = nameArray[i];
   button.setAttribute("onclick", "quote('" + nameArray[i] + "')");
-  
+  */
 } //for
 
 
