@@ -6,9 +6,9 @@ let classObject = {"AlexW": "I am the oldest of two boys, two girls; two redhead
 
 let nameArray =["AlexW","AlexC","Allison","Amy","aardvark"];
  
-let nameButtons = document.querySelector("#aname");
+let nameButtons = document.querySelector("#names");
 for (let i = 0; i < nameArray.length; i++) {
-    nameButtons.innerHTML += "<li><button onclick =quote('" + nameArray[i] + "')>" +nameArray[i]+"</button></li>";
+    nameButtons.innerHTML += "<li><button>" + Hii+"</button></li>";
 
 } //for
 
