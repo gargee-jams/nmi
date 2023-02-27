@@ -19,6 +19,7 @@ function quote(keyword){
     //let source = document.querySelector("#artKeywords").value;
 
     if (classObject.hasOwnProperty(keyword)) {
+      document.querySelector("#about").innerHTML = "No information available about " + keyword;
       document.querySelector("#image").innerHTML = "<img src= pix/" + source + ".jpg>";
     } else {
       document.querySelector("#about").innerHTML = "No information available about " + keyword;
