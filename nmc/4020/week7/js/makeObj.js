@@ -9,15 +9,15 @@ let keywordArray =["Ocean Fantasy","Space Fantasy","Forest Fantasy","Cloud Fanta
  
 let keywordButtons = document.querySelector("#artKeywords");
 for (let i = 0; i < keywordArray.length; i++) {
-  keywordButtons.innerHTML += "<li><button onclick = quote('" + classObject[keywordArray[i]] +"','Ocean Fantasy') >" + keywordArray[i]+"</button></li>";
+  keywordButtons.innerHTML += "<li><button onclick=quote('" + classObject[keywordArray[i]] +"') >" + keywordArray[i] +"</button></li>";
 } //for
 
-function quote(jpgName, keyword){   
+function quote(jpgName){   
+  let keyword = "Ocean Fantasy";
+
     if (classObject.hasOwnProperty(keyword)) {
-      document.querySelector("#about").innerHTML = "No information " + jpgName;
       document.querySelector("#image").innerHTML = "<img src= pix/" + jpgName + ".jpg>";
     } else {
       document.querySelector("#about").innerHTML = "No information available about " + keyword;
-      document.querySelector("#image").innerHTML = "<img src= pix/AlexC.jpg>";
     } //if
   } //quote
