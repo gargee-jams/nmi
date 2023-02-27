@@ -1,8 +1,8 @@
-let classObject = {"Ocean Fantasy": "ocean.jpg",
-"Space Fantasy": "space.jpg",
-"Forest Fantasy": "forest.jpg",
-"Cloud Fantasy": "cloud.jpg",
-"Mountain Fantasy": "mountain.jpg",
+let classObject = {"Ocean Fantasy": "ocean",
+"Space Fantasy": "space",
+"Forest Fantasy": "forest",
+"Cloud Fantasy": "cloud",
+"Mountain Fantasy": "mountain",
 }
 
 let keywordArray =["Ocean Fantasy","Space Fantasy","Forest Fantasy","Cloud Fantasy","Mountain Fantasy"];
