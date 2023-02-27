@@ -1,26 +1,24 @@
-let classObject = {"AlexW": "I am the oldest of two boys, two girls; two redheads, two blondes; two left-handers, two right-handers. ",
-"AlexC": " My beard is thicker than this photo shows. I need new pictures :-(",
-"Allison": "I write about peanuts. ",
-"Amy": " I like mint tea and taking pictures!",
-"aardvark": " I like to eat peanuts. "}
+let classObject = {"Ocean Fantasy": "ocean.jpg",
+"Space Fantasy": "space.jpg",
+"Forest Fantasy": "forest.jpg",
+"Cloud Fantasy": "cloud.jpg",
+"Mountain Fantasy": "mountain.jpg",
+}
 
-let nameArray =["AlexW","AlexC","Allison","Amy","aardvark"];
+let keywordArray =["Ocean Fantasy","Space Fantasy","Forest Fantasy","Cloud Fantasy","Mountain Fantasy"];
  
-let nameButtons = document.querySelector("#names");
-for (let i = 0; i < nameArray.length; i++) {
-  nameButtons.innerHTML += "<li><button onclick =quote('" + nameArray[i] + "')>" +nameArray[i]+"</button></li>";
-  
-  /*  let button = document.createElement("button");
-  button.innerHTML = nameArray[i];
-  button.setAttribute("onclick", "quote('" + nameArray[i] + "')");
-  */
+let keywordButtons = document.querySelector("#artKeywords");
+for (let i = 0; i < keywordArray.length; i++) {
+  keywordButtons.innerHTML += "<li><button onclick = quote('" + keywordArray[i] + "')>" + keywordArray[i]+"</button></li>";
 } //for
 
 
-function quote(name){    
-    if (classObject.hasOwnProperty(name)) {
-      document.querySelector("#about").innerHTML = classObject[name];
+function quote(keyword){    
+    let source = document.querySelector("#artKeywords").value;
+
+    if (classObject.hasOwnProperty(keyword)) {
+      document.querySelector("#image").innerHTML = "<img src= pix/" + source + ".jpg>";
     } else {
-      document.querySelector("#about").innerHTML = "No information available about " + name;
+      document.querySelector("#about").innerHTML = "No information available about " + keyword;
     } //if
   } //quote
