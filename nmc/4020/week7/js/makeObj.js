@@ -14,7 +14,7 @@ for (let i = 0; i < keywordArray.length; i++) {
 
 function quote(jpgName, keyword){   
     if (classObject.hasOwnProperty(keyword)) {
-      document.querySelector("#about").innerHTML = "No information available about " + jpgName;
+      document.querySelector("#about").innerHTML = "No information " + jpgName;
       document.querySelector("#image").innerHTML = "<img src= pix/" + jpgName + ".jpg>";
     } else {
       document.querySelector("#about").innerHTML = "No information available about " + keyword;
