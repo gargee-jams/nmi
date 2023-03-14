@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div {
+            background-color: black;
+            border-radius: 50%;
+            margin: 10px;
+        }
+        #container{
+            background-color: transparent;
+            float:left;
+        }
+        #inner {
+            background-color: gray;
+            opacity: 0.5;
+            margin: auto;
+            transform: translate(0%, 123%);
+        }
+        .hazard {
+            background-color: red !important;
+        }
+    </style>
+    <title>Asteroids</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body>
+    <a href=" ../index.html">Index</a>
+  <div id="count"></div>
+  <div id="aslist"></div>
+  <div id="showData"></div>  
+</body>
+</html>
+<script>
+/*
+    let asteroidDisplay = document.querySelector('body');
+    $(document).ready(function() {
+        $.getJSON('https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=dOes23mtm7TCFPU1pclSMtKMIXEGezaCF9xsmBJ3', function(data) {
+            var howMany = data.near_earth_objects.length;
+            let dataSource = data.near_earth_objects;
+            for (var i = 0; i < dataSource.length; i++) {
+                let hazard = dataSource[i].is_potentially_hazardous_asteroid;
+                let maxWidth = (dataSource[i].estimated_diameter.kilometers.estimated_diameter_max) * 10;
+                let minWidth = (dataSource[i].estimated_diameter.kilometers.estimated_diameter_min)*10;
+                if (hazard) {
+                    asteroidDisplay.innerHTML+= "<div class='hazard' style='width:"+maxWidth+"px;height:"+maxWidth+"px'> <div id = 'inner' style='width:"+minWidth+"px;height:"+minWidth+"px'></div> </div>";
+                } else {
+                    asteroidDisplay.innerHTML+= "<div style='width:"+maxWidth+"px;height:"+maxWidth+"px'><div id = 'inner' style='width:"+minWidth+"px;height:"+minWidth+"px;'></div></div>";
+                } //if
+            } //for
+        });
+    });
+*/
+    let asteroidDisplay = document.querySelector('body');
+    $(document).ready(function() {
+        $.getJSON('https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=dOes23mtm7TCFPU1pclSMtKMIXEGezaCF9xsmBJ3', function(data) {
+            var howMany = data.near_earth_objects.length;
+            let dataSource = data.near_earth_objects;
+            for (var i = 0; i < dataSource.length; i++) {
+                let asteroidElem = document.createElement("div");
+                asteroidElem.id = 'container';
+                let hazard = dataSource[i].is_potentially_hazardous_asteroid;
+                let maxWidth = (dataSource[i].estimated_diameter.kilometers.estimated_diameter_max) * 10;
+                let minWidth = (dataSource[i].estimated_diameter.kilometers.estimated_diameter_min)*10;
+                if (hazard) {
+                    asteroidElem.innerHTML += "<div class='hazard' style='width:"+maxWidth+"px;height:"+maxWidth+"px'> <div id = 'inner' style='width:"+minWidth+"px;height:"+minWidth+"px'></div> </div>";
+                } else {
+                    asteroidElem.innerHTML+= "<div style='width:"+maxWidth+"px;height:"+maxWidth+"px'><div id = 'inner' style='width:"+minWidth+"px;height:"+minWidth+"px;'></div></div>";
+                } //if
+                asteroidDisplay.appendChild(asteroidElem);
+            } //for
+        });
+    });
+</script>
