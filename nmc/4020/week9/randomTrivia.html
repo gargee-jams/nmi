@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <style>
+        :root {
+            background-color: #FFA9A3;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+        }
+        h2 {
+            border-radius: 7px;
+            border-color: black;
+            border-style: dashed;
+        }
+        button {
+            background-color: #F87575; 
+            border-radius: 7px;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 10px;
+            margin: 10px;
+        }
+        .container {
+            display:block;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Trivia!</h2>
+    <div style = 'display: flex;'>
+        <div class="container">
+            <button onclick="qa()">New Question</button> <br>
+            <div id="category"></div>
+            <div id="question"></div>  <br>
+        </div>
+        <div class="container">
+            <button onclick="showAnswer()">Show Answer</button> 
+            <div id="answer"></div>
+        </div>
+    </div>
+    <h4><a href="../index.html">Index</a></h4>
+</body>
+</html>
+
+<script>
+    var question = document.querySelector("#question");
+    var answer = document.querySelector('#answer');
+    var category = document.querySelector('#category');
+    var theAnswer = "";
+
+    function qa() {
+        $.getJSON('https://jservice.io/api/random', function(data) {
+            question.innerHTML = data[0].question;
+            theAnswer = data[0].answer;
+            category.innerHTML = "Category: " + data[0].category.title;
+        });
+    } //qa
+    function showAnswer() {
+        answer.innerHTML = theAnswer;
+    } //showAnswer
+</script>
