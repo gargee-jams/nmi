@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia pt 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <style>
+        :root {
+            background-color: #FFA9A3;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+        }
+        h2 {
+            border-radius: 7px;
+            border-color: black;
+            border-style: dashed;
+        }
+        button {
+            background-color: #F87575; 
+            border-radius: 7px;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 10px;
+            margin: 10px;
+        }
+        .container {
+            display:block;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Trivia!</h2>
+    <button onclick="qa()">Load new question set</button> <br>
+    <div id="maindiv"></div>
+    <h4><a href="../index.html">Index</a></h4>
+</body>
+</html>
+
+<script>
+    var divLoad = document.querySelector('#maindiv');
+    var theAnswer = [];
+
+    function qa() {
+        divLoad.innerHTML = "";
+        $.getJSON('https://jservice.io/api/random?count=10', function(data) {
+            for (var i = 0; i < 10; i++) {
+                divLoad.innerHTML += "<h3>Category: " + data[i].category.title + "</h3>";
+                divLoad.innerHTML += "<h3>" + data[i].question + "</h3>";
+                divLoad.innerHTML += "<div id= 'damnAnswer" + i + "'></div>";
+                divLoad.innerHTML += "<button onclick='showAnswer(" +i+")'>Show Answer</button><br>";
+                theAnswer.push(data[i].answer);
+            } //for
+        });
+    } //qa
+
+    function showAnswer(b) {
+        let whatever = document.querySelector("#damnAnswer" +b);
+        whatever.innerHTML = "<b>The answer is " + theAnswer[b] + "</b>";
+    } //showAnswer
+</script>
