@@ -21,32 +21,63 @@
             font-family: 'Courier New', Courier, monospace;
             background-color: #DAE3E5;
         }
-        #student{
+        #main {
+            display: flex;
+        }
+        #student1, #student2{
             background-color: #BBD1EA;
+            width: 50%;
+            display: flex;
+        }
+        #student {
+            height: 400px;
+        }
+        #inner {
+            padding : 4px;
         }
         #image {
             background-color: #507DBC;
             padding: 7px;
+            height: 75%;
+            display: flex;   
+            justify-content: center;
+        }
+        img {
+            height: 100%;
+        }
+        #fact {
+            display: flex;
+            justify-content: center;
         }
     </style>
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <body>
+    <div id = "main"></div>
+    <a href = '../index.html'>Index</a>
 </body>
 </html>
 <script>
-    let classDisplay = document.querySelector('body');
+    let classDisplay = document.querySelector('#main');
+    let students1 = document.createElement('div');
+    let students2 = document.createElement('div');
     $(document).ready(function() {
         $.getJSON('https://raw.githubusercontent.com/emuel/api/master/5110', function(data) {  
             for (var i = 0; i < data.length; i++) {    
                 let newStudent = document.createElement('div');
                 newStudent.id = 'student';
                 newStudent.innerHTML += "<div class = 'inner' id = 'name'><h3><a href = 'https://" + data[i].domain + "'>" + data[i].stu_name  + " " + data[i]. last_name + "</a></h3></div>";
-                newStudent.innerHTML += "<div class = 'inner' id = 'image'><img style = 'height= 50px'src= 'https://" + data[i].domain + "images/me.jpg'></img></div>";
+                newStudent.innerHTML += "<div class = 'inner' id = 'image'><img src= 'https://" + data[i].domain + "/images/me.jpg'></img></div>";
                 newStudent.innerHTML += "<div class = 'inner' id = 'fact'>" + data[i].fact + "</div>";
-                classDisplay.appendChild(newStudent);
-            }
-            classDisplay.innerHTML += "<a href = '../index.html'>Index</a>";
+                //classDisplay.appendChild(newStudent);
+                if ((i % 2) == 0) {
+                    students2.appendChild(newStudent);
+                } else {
+                    students1.appendChild(newStudent);
+                }//if
+            } //for
+            classDisplay.appendChild(students1);
+            classDisplay.appendChild(students2);    
          });
     });
 </script>
