@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classmates</title>
+    <style>
+        a:link {
+            color: black;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: wavy;
+        }
+        a:visited {
+            color: #2E4565;
+            text-decoration: none;
+        }
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #DAE3E5;
+        }
+        #student{
+            background-color: #BBD1EA;
+        }
+        #image {
+            background-color: #507DBC;
+            padding: 7px;
+        }
+    </style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body>
+</body>
+</html>
+<script>
+    let classDisplay = document.querySelector('body');
+    $(document).ready(function() {
+        $.getJSON('https://raw.githubusercontent.com/emuel/api/master/5110', function(data) {  
+            for (var i = 0; i < data.length; i++) {    
+                let newStudent = document.createElement('div');
+                newStudent.id = 'student';
+                newStudent.innerHTML += "<div class = 'inner' id = 'name'><h3><a href = 'https://" + data[i].domain + "'>" + data[i].stu_name  + " " + data[i]. last_name + "</a></h3></div>";
+                newStudent.innerHTML += "<div class = 'inner' id = 'image'><img style = 'height= 50px'src= 'https://" + data[i].domain + "images/me.jpg'></img></div>";
+                newStudent.innerHTML += "<div class = 'inner' id = 'fact'>" + data[i].fact + "</div>";
+                classDisplay.appendChild(newStudent);
+            }
+            classDisplay.innerHTML += "<a href = '../index.html'>Index</a>";
+         });
+    });
+</script>
