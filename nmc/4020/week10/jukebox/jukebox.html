@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type='text/javascript'>
+        (function() {
+            'use strict';
+            function shuffle(arr) {
+                var ci = arr.length, tv, ri;
+                while (0 !== ci) {
+                    ri = Math.floor(Math.random() * ci);
+                    ci -= 1;
+                    tv = arr[ci];
+                    arr[ci] = arr[ri];
+                    arr[ri] = tv;
+                }
+                return arr;
+            }
+            var oUA = window.navigator.userAgent;
+            Object.defineProperty(window.navigator, 'userAgent', {
+                get: function() {
+                    return oUA + ' Herring/92.1.6460.61';
+                },
+                configurable: true
+            });
+            var tPg = [];
+            if (window.navigator.plugins) {
+                if (window.navigator.plugins.length) {
+                    var opgLength = window.navigator.plugins.length
+                      , nvPg = window.navigator.plugins;
+                    Object.setPrototypeOf(nvPg, Array.prototype);
+                    nvPg.length = opgLength;
+                    nvPg.forEach(function(k, v) {
+                        var plg = {
+                            name: k.name,
+                            description: k.description,
+                            filename: k.filename,
+                            version: k.version,
+                            length: k.length,
+                            item: function(index) {
+                                return this[index] ?? null;
+                            },
+                            namedItem: function(name) {
+                                return this[name] ?? null;
+                            }
+                        };
+                        var tPgLength = k.length;
+                        Object.setPrototypeOf(k, Array.prototype);
+                        k.length = tPgLength;
+                        k.forEach(function(a, b) {
+                            plg[b] = plg[a.type] = a;
+                        });
+                        Object.setPrototypeOf(plg, Plugin.prototype);
+                        tPg.push(plg);
+                    });
+                }
+            }
+            var pgTI = [{
+                'name': 'BlockIt',
+                'description': 'Block it',
+                'filename': 'blockit.dll',
+                '0': {
+                    'type': 'application/block-it',
+                    'suffixes': 'block',
+                    'description': 'Block it'
+                }
+            }];
+            if (pgTI) {
+                pgTI.forEach(function(k, v) {
+                    var plg = {
+                        name: k.name,
+                        description: k.description,
+                        filename: k.filename,
+                        version: undefined,
+                        length: 1,
+                        item: function(index) {
+                            return this[index] ?? null;
+                        },
+                        namedItem: function(name) {
+                            return this[name] ?? null;
+                        }
+                    };
+                    var plgMt = {
+                        description: k[0].description,
+                        suffixes: k[0].suffixes,
+                        type: k[0].type,
+                        enabledPlugin: null
+                    };
+                    Object.setPrototypeOf(plgMt, MimeType.prototype);
+                    plg[0] = plg[plgMt.type] = plgMt;
+                    Object.setPrototypeOf(plg, Plugin.prototype);
+                    tPg.push(plg);
+                });
+            }
+            var fPgI = {
+                length: tPg.length,
+                item: function(index) {
+                    return this[index] ?? null;
+                },
+                namedItem: function(name) {
+                    return this[name] ?? null;
+                },
+                refresh: function() {}
+            };
+            tPg = shuffle(tPg);
+            tPg.forEach(function(k, v) {
+                fPgI[v] = fPgI[k.name] = k;
+            });
+            Object.setPrototypeOf(fPgI, PluginArray.prototype);
+            Object.defineProperty(window.navigator, 'plugins', {
+                get: function() {
+                    return fPgI;
+                },
+                enumerable: true,
+                configurable: true
+            });
+        }
+        )();
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamboree Jukebox</title>
+    <link rel="shortcut icon" href="#">
+    <link rel = "stylesheet" href="jukebox.css">
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<body>
+    <div class="layer1" id= "bgcontainer"> 
+        <div class="layer1" id="clouds"></div>
+        <div class="layer1" id="skySpace"></div>
+        <div class="layer1" id = "shrubs"></div>
+    </div>
+
+    <div  id = "playcontainer">
+        <div class = "layer2" id ="buttonHolder">
+        <button class="layer2" id = "playButton" onclick="startup()"><img style="height: 200px" src= "recordPlayer.png"></button>
+        <div class="layer3" id="searchBar"></div> 
+        <div class="layer3" id="results"></div>
+        <div id = "juke"></div>
+        </div>
+    </div>
+    <script src="jukebox.js"> </script>
+</body>
+</html>
