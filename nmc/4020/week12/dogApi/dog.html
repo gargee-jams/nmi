@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="">
+<head><script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>img {width:400px;}</style>
+    <title></title>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="showme('cocker')">Cocker</button>
+        <button v-on:click="showme('brittany')">Brittany</button>
+        <div v-for="theBreed in moreData">
+            <a :href="theBreed"><img :src="theBreed"/></a>
+        </div>
+    </div> 
+</body>
+</html>
+<script src="dogApi.js"></script>

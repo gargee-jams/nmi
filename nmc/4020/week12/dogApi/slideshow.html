@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="">
+<head><script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>img {width:400px;}</style>
+    <title></title>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="showme('cocker', 1)">Cocker</button>
+        <button v-on:click="showme('brittany',1)">Brittany</button>
+        <button v-on:click="showme('japanese',1)">Japanese</button>
+        <button v-on:click="showme('sussex',1)">Sussex</button>
+        <button v-on:click="showme('blenheim',1)">Blenheim</button>
+        <button v-on:click="showme('irish',1)">Irish</button>
+        <button v-on:click="showme('welsh',1)">Welsh</button>
+
+        <p><button v-on:click="slider(1)">click me to go forward</button></p>
+        <p><button v-on:click="slider(-1)">click me to go backward</button></p>
+
+        <img :src="whichDawg"/>
+    </div> 
+</body>
+</html>
+<script src="slideshow.js"></script>
