@@ -18,7 +18,9 @@
             text-align: center;
             background-color: azure;
         }
-
+        #indoor {
+            height: 40px;
+        }
     </style>
 </head>
 
@@ -27,6 +29,11 @@
         <div id="cat" v-for="eachCat in catArray">
             <a v-bind:href="'eachCat.link'"><h2>{{eachCat.name}}</h2></a>
             <p>{{eachCat.description}}</p>
+            <p>Temperament: {{eachCat.temperament}}</p>
+            <div v-if = "eachCat.type != 0">
+                <p id = "label">Indoor</p>
+                <img id = "indoor" src = "house.png">
+            </div>
             <img style="height: 200px" :src= domain1+eachCat.reference_image_id+domain2>
         </div>
     </div>

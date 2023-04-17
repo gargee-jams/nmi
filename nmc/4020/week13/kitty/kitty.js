@@ -19,6 +19,7 @@ new Vue({
                     catObj.name = this.catArray[i].name;
                     catObj.link = this.catArray[i].wikipedia_url;
                     catObj.description = this.catArray[i].description;
+                    catObj.temperament = this.catArray[i].temperament;
                     catObj.type = this.catArray[i].indoor;
                     this.breeds.push(catObj);
                 }
