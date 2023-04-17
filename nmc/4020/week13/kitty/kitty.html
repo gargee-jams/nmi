@@ -7,13 +7,30 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Cat Stuff</title>
+    <style>
+        #app {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #cat {
+            text-align: center;
+            background-color: azure;
+        }
+
+    </style>
 </head>
 
 <body>
     <div id="app">
-
-
+        <div id="cat" v-for="eachCat in catArray">
+            <a v-bind:href="'eachCat.link'"><h2>{{eachCat.name}}</h2></a>
+            <p>{{eachCat.description}}</p>
+            <img style="height: 200px" :src= domain1+eachCat.reference_image_id+domain2>
+        </div>
     </div>
+    <h3><a href= "../../index.html">Index</a></h3>
 </body>
 
 </html>
