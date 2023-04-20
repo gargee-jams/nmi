@@ -1,15 +1,37 @@
-new Vue({
-    el: '#bobcat',
-    data: {
-        image: "",
-        whichcat: "abys",
-        thename: "",
-        allofit: [],
-        i: 0,
-        adapt: 0,
-        description: "",
-        origin: ""
+Vue.component('cat', {
+    props: {
+        whichcat: String
     },
+    template:  
+       `<div>
+            <h2 id = "name">{{thename}}</h2>
+            <h3>{{origin}}</h3>
+            <p>{{description}}</p>
+            <p>{{temperament}}</p>
+            <h2>Adaptability Score: {{adapt}}</h2>
+            <div style = "{width: '200px', backgroundColor: '#B1AE91', justifyContent: 'center'}">
+                <div :style = "{width: affection_level * 100 + 'px', backgroundColor: '#95bf8f', borderRadius: '1px', borderStyle: 'solid', borderColor: '#C96480', margin: '2px'}">Affection Level</div>
+                <div :style = "{width: child_friendly * 100 + 'px', backgroundColor: '#C96480', borderRadius: '1px', borderStyle: 'solid', borderColor: '#95bf8f', margin: '2px'}">Child-Friendly</div>
+                <div :style = "{width: dog_friendly * 100 + 'px', backgroundColor: '#95bf8f', borderRadius: '1px', borderStyle: 'solid', borderColor: '#C96480', margin: '2px'}">Dog-Friendly</div>
+            </div>
+            <button v-on:click="slideshow">slideshow</button>
+            <img :src="image.url">
+        </div>`, 
+        data() {
+            return{ 
+                image: "",
+                thename: "",
+                allofit: [],
+                i: 0,
+                adapt: 0,
+                description: "",
+                origin: "",
+                temperament: "",
+                affection_level: "",
+                child_friendly: "",
+                dog_friendly: ""
+            }
+        },
     created() {
         this.loadNextImage(this.whichcat);
     },
@@ -25,14 +47,19 @@ new Vue({
                 })
      //grabs the id in order to target new url for more data
  
-     let theid = response.data[0].id;
-//response2 is a new variable that uses the id to get data from a URL with additional information
-  let response2 = await axios.get('https://api.thecatapi.com/v1/images/' + theid, {})
-    this.adapt = response2.data.breeds[0].adaptability;
-    this.thename = response2.data.breeds[0].name;
-    this.description = response2.data.breeds[0].description;
-    this.origin = response2.data.breeds[0].origin;
-    this.allofit = response.data;
+        let theid = response.data[0].id;
+    //response2 is a new variable that uses the id to get data from a URL with additional information
+        let response2 = await axios.get('https://api.thecatapi.com/v1/images/' + theid, {})
+        this.adapt = response2.data.breeds[0].adaptability;
+        this.thename = response2.data.breeds[0].name;
+        this.description = response2.data.breeds[0].description;
+        this.origin = response2.data.breeds[0].origin;
+        this.temperament = response2.data.breeds[0].temperament;
+        this.affection_level = response2.data.breeds[0].affection_level;
+        this.child_friendly = response2.data.breeds[0].child_friendly;
+        this.dog_friendly = response2.data.breeds[0].dog_friendly;
+
+        this.allofit = response.data;
             } catch (err) {
                 console.log(err)
             }
@@ -48,16 +75,8 @@ new Vue({
         }
     }
 })
-Vue.component("catSlide", {
-    props: {
-        breedName: whichcat
-    },
-    template:  
-       '<h2>{{thename}}</h2><h3>{{origin}}</h3><p>{{description}}</p><h2>Adaptability Score: {{adapt}}</h2><button v-on:click="slideshow">slideshow</button><br><br><img :src="image.url"><br>'
-    ,
-    methods: {
-        slideshow() {
-            
-        }
-    }
+
+var co = new Vue ({
+    el: '#cats'
 })
+

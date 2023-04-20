@@ -1,29 +1,54 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <style>
-        img {width: 500px;}
-        button{width: 80px; background-color: grey;color:white;padding: 8px;border-radius: 12px;border: solid black 4px;} </style>
-</head>
-
-<body>
-    <div id="bobcat">
-        <!--
-        <h2>{{thename}}</h2>
-        <h3>{{origin}}</h3>
-        <p>{{description}}</p>
-        <h2>Adaptability Score: {{adapt}}</h2>
-        <button v-on:click="slideshow()">slideshow</button><br><br>
-   
-        <img :src="image.url"><br>
-        -->
-        <catSlide></catSlide>
-    </div>
-
-
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cat Component</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <style>
+            body {
+                font-family: 'Courier New', Courier, monospace;
+                margin: 0px;
+            }
+            img {width: 500px;}
+            button{width: 80px; background-color: grey;color:white;padding: 8px;border-radius: 12px;border: solid black 4px; margin: 6px;} 
+            #cats {
+                background-color: #d49190;
+                display: flex;
+                flex-direction: column;
+            }
+            #eachCat {
+                background-color: #B47978;
+                margin: 10px;
+                text-align: center;
+                padding: 15px;
+                border-radius: 20px;
+            }
+            #name {
+                background-color: #95bf8f;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="cats">
+            <div id="eachCat">
+                <cat whichcat ="amis"></cat>
+            </div>
+            <div id="eachCat">
+                <cat whichcat ="bslo"></cat>
+            </div>
+            <div id="eachCat">
+                <cat whichcat ="cymr"></cat>
+            </div>
+            <div id="eachCat">
+                <cat whichcat ="manx"></cat>
+            </div>
+            <div id="eachCat">
+                <cat whichcat ="jbob"></cat>
+            </div>
+        </div>
+    </body>
     <script src="catshow.js"></script>
 </html>
